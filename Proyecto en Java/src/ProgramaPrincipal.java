@@ -1,5 +1,5 @@
-public class ProgramaPrincipal {
 import java.util.Scanner;
+public class ProgramaPrincipal {
 
     public static void main(String[] args) {
     //Creamos clientes para mostrar su información 
@@ -48,6 +48,7 @@ import java.util.Scanner;
         else {
             //Si no hay descuento
             descuento = 0;  
+            }
         }
     }
 }
