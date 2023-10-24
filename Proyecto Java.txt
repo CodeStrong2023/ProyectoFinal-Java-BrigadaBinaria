@@ -1,0 +1,35 @@
+PROYECTO EN JAVA
+
+Para proyectos o ejercicios sencillos se utiliza Java with ant, para proyectos complejos se usa Java with Maven 
+PASOS PARA NUESTRO PROYECTO
+•	Elegir un tipo de proyecto 
+•	Plantear la parte lógica (qué va a contener)
+•	Realizar el modelo correspondiente de la Clase con los datos correspondientes 
+•	Utilizar Listas o arrays
+•	Bucles (while y for)
+•	Condicionales (if-else if-else-switch)
+•	Búsquedas 
+•	Ordenamiento
+•	Métodos/ Constructores 
+
+¿De qué trata nuestro proyecto?
+Descripción del Proyecto: Registro de Clientes para una Tienda de Ropa
+
+Este proyecto se centra en la creación de un software básico para una tienda de ropa. 
+El objetivo principal de esta aplicación es actuar como una base de datos que permite al dueño del negocio y a los empleados gestionar y mantener un inventario de clientes. 
+Esta "base de datos" almacena información relevante sobre los clientes y sus compras en la tienda, lo que facilita la gestión de relaciones con los clientes y el seguimiento de sus historiales de compras.
+
+Tenemos una clase principal, la cual va a representar a un cliente y almacena datos como: 
+el nombre, apellido, número de identificación (DNI), información de contacto (como número de teléfono y correo electrónico) y los gastos que han realizado en la tienda. 
+Cada instancia de esta clase corresponde a un cliente específico y sus datos relacionados.
+
+También tenemos una clase que está diseñada para buscar y recuperar información sobre clientes Proporciona métodos que permiten buscar clientes por su nombre, DNI u otros criterios. 
+Esta funcionalidad es esencial para acceder rápidamente a los datos de un cliente específico.
+
+Asimismo, tenemos métodos que se encargan de organizar y clasificar la lista de clientes según ciertos criterios, 
+como el nombre, el DNI o el total de compras realizadas. 
+Esto facilita la visualización de la información y la toma de decisiones basadas en diferentes aspectos de los clientes.
+
+Y por último la clase principal, también conocido como el main, el cual permite ejecutar y coordinar todas las operaciones. 
+Aquí se inicializan objetos, se interactúa con el usuario y se ejecutan las funcionalidades del programa. 
+Esta clase principal es responsable de iniciar, controlar el flujo del programa y hacer que el usuario pueda ingresar lso datos correspondientes 
