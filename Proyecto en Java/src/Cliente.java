@@ -65,9 +65,9 @@ public class Cliente {
     public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
-    //Método para mostrar la información de cada cliente 
+        //Método para mostrar la información de cada cliente 
             //Información del objeto y el nombre de la instancia
-            public void mostrarInformacion() {
+            public void mostrarInformacionCliente() {
                 System.out.println("LISTA DE CLIENTES" + "\n");
                 //System.out.println("Nombre de la instancia: " + nombreInstancia);
                 System.out.println("NOMBRE: "+ this.nombre);
