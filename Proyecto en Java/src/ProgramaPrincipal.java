@@ -1,7 +1,10 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+
 public class ProgramaPrincipal {
 private static int contadorObjetos = 6;
     public static void main(String[] args) {
+        ArrayList<Cliente> listaClientes = new ArrayList<>();
     //Creamos clientes para mostrar su información
         //Objetos(personas) que representan a los clientes
         Cliente persona1 = new Cliente(46547662, "Angelina", "Pizzolatto", "2604749366", "angelinapizzolatto@gmail.com", 25000, 2500); 
@@ -63,4 +66,6 @@ private static int contadorObjetos = 6;
     private static void asignarNombreObjeto(ClienteNuevo objeto) {
         objeto.setNombreInstancia("persona" + (contadorObjetos+1)); 
     }
+
+    
 }
