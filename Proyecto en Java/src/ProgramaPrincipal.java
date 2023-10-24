@@ -66,6 +66,12 @@ private static int contadorObjetos = 6;
     private static void asignarNombreObjeto(ClienteNuevo objeto) {
         objeto.setNombreInstancia("persona" + (contadorObjetos+1)); 
     }
-
-    
+    public static Cliente buscarPorNombre(ArrayList<Cliente> clientes, String nombre) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getNombre().equals(nombre)) {
+                return cliente;
+            }
+        }
+        return null;
+    }   
 }
