@@ -83,12 +83,12 @@ private static int contadorObjetos = 6;
         }
         return null;
         }
-}
-public static Cliente buscarClientePorDni(ArrayList<Cliente> listaClientes, int dni) {
+    public static Cliente buscarClientePorDni(ArrayList<Cliente> listaClientes, int dni) {
         for (Cliente cliente : listaClientes) {
-            if (cliente.getDni().equals(dni)) {
+            if (cliente.getDni() == dni) {
                 return cliente;
             }
         }
         return null;
     }
+}
