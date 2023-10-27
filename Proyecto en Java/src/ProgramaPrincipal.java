@@ -68,7 +68,7 @@ private static int contadorObjetos = 6;
     }
     public static Cliente buscarPorNombre(ArrayList<Cliente> clientes, String nombre) {
         for (Cliente cliente : clientes) {
-            if (cliente.getNombre().equals(nombre)) {
+            if (cliente.getNombre().equalsIgnoreCase(nombre)) {
                 return cliente;
             }
         }
@@ -77,7 +77,7 @@ private static int contadorObjetos = 6;
     //Método para buscar a un cliente por el apellido 
     public static Cliente buscarPorApellido(ArrayList<Cliente> clientes, String apellido) {
         for (Cliente cliente : clientes) {
-            if (cliente.getApellido().equals(apellido)) {
+            if (cliente.getApellido().equalsIgnoreCase(apellido)) {
                 return cliente;
             }
         }
