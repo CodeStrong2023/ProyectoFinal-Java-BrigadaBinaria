@@ -78,9 +78,20 @@ private static int contadorObjetos = 6;
                     System.out.println("Cliente no encontrado por nombre.");
             }
                 break;
+            case 2: 
+            System.out.println("BUSCAR CLIENTE POR APELLIDO");
+                // Llamar al método buscarClientePorNombre
+                System.out.println("Ingrese el nombre del cliente a buscar");
+                String apellidoBuscado = scanner.nextLine(); 
+                Cliente clientePorApellido = AccionesClientes.buscarPorApellido(listaClientes,apellidoBuscado); 
+                if (clientePorApellido != null) {
+                    System.out.println("Cliente encontrado por nombre: " + clientePorApellido);
+            }   else {
+                    System.out.println("Cliente no encontrado por nombre.");
             }
+                break; 
 
-
+            }
         // Crear una instancia de un objeto (por ejemplo, ProductoRopa)
         ClienteNuevo nuevoObjeto = new ClienteNuevo(nombre, apellido, dni, telefono, email, totalCompra, descuento);
         asignarNombreObjeto(nuevoObjeto); 
