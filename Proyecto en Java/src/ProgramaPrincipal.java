@@ -90,8 +90,18 @@ private static int contadorObjetos = 6;
                     System.out.println("Cliente no encontrado por nombre.");
             }
                 break; 
-
+            case 3:  
+            System.out.println("Buscar cliente por DNI");
+            System.out.println("Ingrese el DNI a buscar");
+            int dniBuscado = Integer.parseInt(scanner.nextLine());
+            Cliente clientePorDni = AccionesClientes.buscarClientePorDni(listaClientes, dniBuscado);
+            if (clientePorDni != null) {
+                System.out.println("Cliente encontrado por DNI: " + clientePorDni);
+            } else {
+                System.out.println("Cliente no encontrado por DNI.");
+                break;
             }
+            
         // Crear una instancia de un objeto (por ejemplo, ProductoRopa)
         ClienteNuevo nuevoObjeto = new ClienteNuevo(nombre, apellido, dni, telefono, email, totalCompra, descuento);
         asignarNombreObjeto(nuevoObjeto); 
