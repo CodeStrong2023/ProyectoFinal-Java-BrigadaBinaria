@@ -52,6 +52,34 @@ private static int contadorObjetos = 6;
             descuento = 0;  
         }
         System.out.println("Se registró correctamente el cliente N°" + (contadorObjetos+1)+"\n");
+        
+        //Luego de cargar los clientes debemos realizar un switch para ver que quiere hacer el usuario 
+        //Le pedimos al usuario un número según lo que desee hacer 
+        System.out.println("Ingrese un número según lo que desea");
+        System.out.println("1: Buscar cliente por su nombre");
+        System.out.println("2: Buscar cliente por su apellido");
+        System.out.println("3: Buscar cliente por su dni");
+        System.out.println("4: Ver lista de todos los clientes en orden de registro");
+        System.out.println("5: Ver lista de clientes en orden alfabético");
+        System.out.println("6: Ver lista de clientes según quien realizó más gastos en la tienda");
+        System.out.println("7: Salir del programa");
+        //Le pedimos al usuario un número según lo que desee hacer 
+        int caso = Integer.parseInt(scanner.nextLine()); 
+        switch (caso) {
+            case 1:
+            System.out.println("BUSCAR CLIENTE POR NOMBRE");
+                // Llamar al método buscarPorNombre
+                System.out.println("Ingrese el nombre del cliente a buscar");
+                String nombreBuscado = scanner.nextLine(); 
+                Cliente clientePorNombre = AccionesClientes.buscarPorNombre(listaClientes,nombreBuscado);
+                if (clientePorNombre != null) {
+                    System.out.println("Cliente encontrado por nombre: " + clientePorNombre);
+            }   else {
+                    System.out.println("Cliente no encontrado por nombre.");
+            }
+                break;
+            }
+
 
         // Crear una instancia de un objeto (por ejemplo, ProductoRopa)
         ClienteNuevo nuevoObjeto = new ClienteNuevo(nombre, apellido, dni, telefono, email, totalCompra, descuento);
