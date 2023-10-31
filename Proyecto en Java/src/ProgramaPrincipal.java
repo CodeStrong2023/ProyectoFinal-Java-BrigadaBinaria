@@ -78,6 +78,7 @@ private static int contadorObjetos = 6;
                     System.out.println("Cliente no encontrado por nombre.");
             }
                 break;
+
             case 2: 
             System.out.println("BUSCAR CLIENTE POR APELLIDO");
                 // Llamar al método buscarClientePorNombre
@@ -90,6 +91,7 @@ private static int contadorObjetos = 6;
                     System.out.println("Cliente no encontrado por nombre.");
             }
                 break; 
+
             case 3:  
             System.out.println("Buscar cliente por DNI");
             System.out.println("Ingrese el DNI a buscar");
@@ -100,6 +102,23 @@ private static int contadorObjetos = 6;
             } else {
                 System.out.println("Cliente no encontrado por DNI.");
                 break;
+                
+            case 4:
+                System.out.println("LISTA DE CLIENTES EN ORDEN DE REGISTRO");
+                // Mostrar todos los clientes
+                System.out.println("Lista de todos los clientes:");
+                System.out.println("\n");
+                for (Cliente cliente : listaClientes) {
+                    System.out.println("DNI: " + cliente.getDni());
+                    System.out.println("Nombre: " + cliente.getNombre());
+                    System.out.println("Apellido: " + cliente.getApellido());
+                    System.out.println("Teléfono: " + cliente.getTelefono());
+                    System.out.println("Email: " + cliente.getEmail());
+                    System.out.println("Total de gasto realizado en la tienda: " + cliente.getTotalCompra());
+                    System.out.println("Descuento: " + cliente.getDescuento());
+            }
+                break;
+
             }
             
         // Crear una instancia de un objeto (por ejemplo, ProductoRopa)
