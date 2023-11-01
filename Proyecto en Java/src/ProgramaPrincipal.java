@@ -117,8 +117,23 @@ private static int contadorObjetos = 6;
                     System.out.println("Total de gasto realizado en la tienda: " + cliente.getTotalCompra());
                     System.out.println("Descuento: " + cliente.getDescuento());
             }
-                break;
-            }  
+                break;  
+            case 5:
+            listaClientes.sort(new OrdenarClientes());
+            System.out.println("LISTA DE CLIENTES EN ORDEN ALFABÉTICO");
+                // Mostrar la lista ordenada
+                System.out.println("Lista de todos los clientes ordenados alfabéticamente:");
+                 for (Cliente cliente : listaClientes) {
+                    System.out.println("DNI: " + cliente.getDni());
+                    System.out.println("Nombre: " + cliente.getNombre());
+                    System.out.println("Apellido: " + cliente.getApellido());
+                    System.out.println("Teléfono: " + cliente.getTelefono());
+                    System.out.println("Email: " + cliente.getEmail());
+                    System.out.println("Total de gasto realizado en la tienda: " + cliente.getTotalCompra());
+                    System.out.println("Descuento: " + cliente.getDescuento());
+                }
+                    break;
+            }
         // Crear una instancia de un objeto (por ejemplo, ProductoRopa)
         ClienteNuevo nuevoObjeto = new ClienteNuevo(nombre, apellido, dni, telefono, email, totalCompra, descuento);
         asignarNombreObjeto(nuevoObjeto); 
