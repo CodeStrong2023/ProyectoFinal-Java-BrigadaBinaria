@@ -102,7 +102,7 @@ private static int contadorObjetos = 6;
             } else {
                 System.out.println("Cliente no encontrado por DNI.");
                 break;
-                
+            }
             case 4:
                 System.out.println("LISTA DE CLIENTES EN ORDEN DE REGISTRO");
                 // Mostrar todos los clientes
@@ -118,9 +118,7 @@ private static int contadorObjetos = 6;
                     System.out.println("Descuento: " + cliente.getDescuento());
             }
                 break;
-
-            }
-            
+            }  
         // Crear una instancia de un objeto (por ejemplo, ProductoRopa)
         ClienteNuevo nuevoObjeto = new ClienteNuevo(nombre, apellido, dni, telefono, email, totalCompra, descuento);
         asignarNombreObjeto(nuevoObjeto); 
