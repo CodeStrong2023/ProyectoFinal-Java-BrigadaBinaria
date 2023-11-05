@@ -1,15 +1,8 @@
 import java.util.ArrayList;
 
-public class AccionesClientes {
-    /*
-     * Método para agreagr clientes 
-     * Método para mostrar su información 
-     * Método para ordenarlos según: quién realizó más gastos en la tienda y alfabéticamente (nombre)
-     * Método para buscar a alguien en específico según: DNI, nombre y apellido 
-     */
-
+public class BuscarCliente {
     //MÉTODOS PARA BUSCAR CLIENTES
-    //Método para asignarle el nombre personaN a los objetos que creen los usuarios por teclado 
+    //Método para buscar a un cliente por nombre
     public static Cliente buscarPorNombre(ArrayList<Cliente> clientes, String nombre) {
         for (Cliente cliente : clientes) {
             if (cliente.getNombre().equalsIgnoreCase(nombre)) {
@@ -27,6 +20,7 @@ public class AccionesClientes {
         }
         return null;
         }
+        //Método para buscar a un cliente por su dni
     public static Cliente buscarClientePorDni(ArrayList<Cliente> listaClientes, int dni) {
         for (Cliente cliente : listaClientes) {
             if (cliente.getDni() == dni) {

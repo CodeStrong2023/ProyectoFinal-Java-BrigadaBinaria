@@ -71,7 +71,7 @@ private static int contadorObjetos = 6;
                 // Llamar al método buscarPorNombre
                 System.out.println("Ingrese el nombre del cliente a buscar");
                 String nombreBuscado = scanner.nextLine(); 
-                Cliente clientePorNombre = AccionesClientes.buscarPorNombre(listaClientes,nombreBuscado);
+                Cliente clientePorNombre = BuscarCliente.buscarPorNombre(listaClientes,nombreBuscado);
                 if (clientePorNombre != null) {
                     System.out.println("Cliente encontrado por nombre: " + clientePorNombre);
             }   else {
@@ -84,7 +84,7 @@ private static int contadorObjetos = 6;
                 // Llamar al método buscarClientePorNombre
                 System.out.println("Ingrese el nombre del cliente a buscar");
                 String apellidoBuscado = scanner.nextLine(); 
-                Cliente clientePorApellido = AccionesClientes.buscarPorApellido(listaClientes,apellidoBuscado); 
+                Cliente clientePorApellido = BuscarCliente.buscarPorApellido(listaClientes,apellidoBuscado); 
                 if (clientePorApellido != null) {
                     System.out.println("Cliente encontrado por nombre: " + clientePorApellido);
             }   else {
@@ -96,7 +96,7 @@ private static int contadorObjetos = 6;
             System.out.println("Buscar cliente por DNI");
             System.out.println("Ingrese el DNI a buscar");
             int dniBuscado = Integer.parseInt(scanner.nextLine());
-            Cliente clientePorDni = AccionesClientes.buscarClientePorDni(listaClientes, dniBuscado);
+            Cliente clientePorDni = BuscarCliente.buscarClientePorDni(listaClientes, dniBuscado);
             if (clientePorDni != null) {
                 System.out.println("Cliente encontrado por DNI: " + clientePorDni);
             } else {
