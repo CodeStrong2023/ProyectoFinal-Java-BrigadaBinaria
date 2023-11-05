@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class ProgramaPrincipal {
 private static int contadorObjetos = 6;
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         ArrayList<Cliente> listaClientes = new ArrayList<>();
     //Creamos clientes para mostrar su información
         //Objetos(personas) que representan a los clientes
@@ -20,38 +21,16 @@ private static int contadorObjetos = 6;
         Cliente persona6 = new Cliente(46547662, "Camila", "Gómez", "2604916352", "camigomez@gmail.com", 9900, 0);
         persona6.mostrarInformacionCliente();
 
-        
-        Scanner scanner = new Scanner(System.in);
-        int i, descuento; 
-        System.out.println("¿Cuántos clientes desea registrar?");
-        int cantidadClientes = Integer.parseInt(scanner.nextLine()); 
-        for (i=1; i <=cantidadClientes;i++) {
-        //Le pedimos los datos al usuario 
-        System.out.print("NOMBRE: ");
-        String nombre = scanner.nextLine();
-
-        System.out.print("APELLIDO: ");
-        String apellido = scanner.nextLine();
-
-        System.out.print("DNI: ");
-        int dni = Integer.parseInt(scanner.nextLine());
-
-        System.out.print("TELÉFONO: ");
-        int telefono = Integer.parseInt(scanner.nextLine());
-
-        System.out.print("EMAIL: ");
-        String email = scanner.nextLine();
-
-        System.out.print("TOTAL DE COMPRA: ");
-        int totalCompra = Integer.parseInt(scanner.nextLine());
-        if (totalCompra>=10000) {
-            // Si la compra supera los $10.000 se le realiza un descuento del 10%
-            descuento = (int) (totalCompra*0.1); 
-        } else {
-            //Si no hay descuento
-            descuento = 0;  
+        // Agregar nuevos clientes
+        for (int i = 1; i <= cantidadNuevosClientes; i++) {
+            Cliente cliente = Cliente.ingresarCliente(scanner, i + cantidadInicialClientes);
+            listaClientes.add(cliente);
         }
-        System.out.println("Se registró correctamente el cliente N°" + (contadorObjetos+1)+"\n");
+        // Agregar nuevos clientes
+        for (int i = 1; i <= cantidadNuevosClientes; i++) {
+            Cliente cliente = Cliente.ingresarCliente(scanner, i + cantidadInicialClientes);
+            listaClientes.add(cliente);
+        }
         
         //Luego de cargar los clientes debemos realizar un switch para ver que quiere hacer el usuario 
         //Le pedimos al usuario un número según lo que desee hacer 
@@ -125,17 +104,4 @@ private static int contadorObjetos = 6;
             alfabetoClientes.ordenarClientesAlfabeto(listaClientes);
                     break;
             }
-        // Crear una instancia de un objeto (por ejemplo, ProductoRopa)
-        ClienteNuevo nuevoObjeto = new ClienteNuevo(nombre, apellido, dni, telefono, email, totalCompra, descuento);
-        asignarNombreObjeto(nuevoObjeto); 
-        contadorObjetos++; 
-
-        // Mostrar la información del objeto y el nombre de la instancia
-        nuevoObjeto.mostrarInformacionClienteNuevo();
-    }
-}
-    //Método para asignarle el nombre personaN a los objetos que creen los usuarios por teclado 
-    private static void asignarNombreObjeto(ClienteNuevo objeto) {
-        objeto.setNombreInstancia("persona" + (contadorObjetos+1)); 
-    }
 }
