@@ -1,3 +1,4 @@
+import java.util.Scanner;
 //la clase cliente será la clase base de nuestro Proyecto
 public class Cliente {
     // Atributos 
@@ -20,7 +21,11 @@ public class Cliente {
         this.telefono = telefono; 
         this.email = email;
         this.totalCompra = totalCompra; 
-        this.descuento = descuento;
+        if (totalCompra >= 15000) {
+            this.descuento = totalCompra * 0.10;
+        } else {
+            this.descuento = 0; 
+        }
     }
     //Getters y Setters de cada atributo 
     public int getDni() {
@@ -86,7 +91,7 @@ public class Cliente {
         double totalCompra = scanner.nextDouble();
 
         scanner.nextLine(); 
-        return new Cliente(dni, nombre, apellido, telefono, email, totalCompra);
+        return new Cliente(dni, nombre, apellido, telefono, email, totalCompra, totalCompra);
     }
     //Método para mostrar la información de cada cliente 
     //Información del objeto y el nombre de la instancia

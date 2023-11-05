@@ -2,11 +2,11 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class ProgramaPrincipal {
-private static int contadorObjetos = 6;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Cliente> listaClientes = new ArrayList<>();
     //Creamos clientes para mostrar su información
+    int cantidadInicialClientes = 6;
         //Objetos(personas) que representan a los clientes
         Cliente persona1 = new Cliente(46547662, "Angelina", "Pizzolatto", "2604749366", "angelinapizzolatto@gmail.com", 25000, 2500); 
         persona1.mostrarInformacionCliente();
@@ -21,11 +21,9 @@ private static int contadorObjetos = 6;
         Cliente persona6 = new Cliente(46547662, "Camila", "Gómez", "2604916352", "camigomez@gmail.com", 9900, 0);
         persona6.mostrarInformacionCliente();
 
-        // Agregar nuevos clientes
-        for (int i = 1; i <= cantidadNuevosClientes; i++) {
-            Cliente cliente = Cliente.ingresarCliente(scanner, i + cantidadInicialClientes);
-            listaClientes.add(cliente);
-        }
+        //Le pedimos al usuario la cantidad de clientes que ingresará
+        System.out.println("¿Cuántos clientes adicionales desea ingresar?");
+        int cantidadNuevosClientes = scanner.nextInt();
         // Agregar nuevos clientes
         for (int i = 1; i <= cantidadNuevosClientes; i++) {
             Cliente cliente = Cliente.ingresarCliente(scanner, i + cantidadInicialClientes);
@@ -104,4 +102,5 @@ private static int contadorObjetos = 6;
             alfabetoClientes.ordenarClientesAlfabeto(listaClientes);
                     break;
             }
+    }
 }
