@@ -65,17 +65,40 @@ public class Cliente {
     public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
-        //Método para mostrar la información de cada cliente 
-            //Información del objeto y el nombre de la instancia
-            public void mostrarInformacionCliente() {
-                System.out.println("LISTA DE CLIENTES" + "\n");
-                //System.out.println("Nombre de la instancia: " + nombreInstancia);
-                System.out.println("NOMBRE: "+ this.nombre);
-                System.out.println("APELLIDO: " + this.apellido);
-                System.out.println("DNI: " + this.dni);
-                System.out.println("TELÉFONO: " + this.telefono);
-                System.out.println("EMAIL: " + this.email);
-                System.out.println ("TOTAL DE COMPRA: " + this.totalCompra);
-                System.out.println("DESCUENTO: " + this.descuento);
+    // Método para obtener un nuevo objeto del tipo Cliente (cargados por teclado)
+    public static Cliente ingresarCliente(Scanner scanner, int numeroCliente) {
+        System.out.println("Ingrese el DNI del cliente " + numeroCliente + ":");
+        int dni = scanner.nextInt();
+
+        System.out.println("Ingrese el nombre del cliente " + numeroCliente + ":"); 
+        String nombre = scanner.next(); 
+
+        System.out.println("Ingrese el apellido del cliente " + numeroCliente + ":");
+        String apellido = scanner.next();
+
+        System.out.println("Ingrese el número telefónico del cliente " + numeroCliente + ":");
+        String telefono = scanner.next();
+
+        System.out.println("Ingrese el mail del cliente " + numeroCliente + ":");
+        String email = scanner.next();
+
+        System.out.println("Ingrese el total de compra del cliente " + numeroCliente + ":");
+        double totalCompra = scanner.nextDouble();
+
+        scanner.nextLine(); 
+        return new Cliente(dni, nombre, apellido, telefono, email, totalCompra);
+    }
+    //Método para mostrar la información de cada cliente 
+    //Información del objeto y el nombre de la instancia
+    public void mostrarInformacionCliente() {
+    System.out.println("LISTA DE CLIENTES" + "\n");
+    //System.out.println("Nombre de la instancia: " + nombreInstancia);
+    System.out.println("NOMBRE: "+ this.nombre);
+    System.out.println("APELLIDO: " + this.apellido);
+    System.out.println("DNI: " + this.dni);
+    System.out.println("TELÉFONO: " + this.telefono);
+    System.out.println("EMAIL: " + this.email);
+    System.out.println ("TOTAL DE COMPRA: " + this.totalCompra);
+    System.out.println("DESCUENTO: " + this.descuento);
     }
 }
