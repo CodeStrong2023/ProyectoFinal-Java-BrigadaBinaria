@@ -60,12 +60,6 @@ public class Programa {
                     System.out.println("Ingrese el DNI a buscar");
                     int dniBuscado = Integer.parseInt(scanner.nextLine());
                     Cliente clientePorDni = BuscarCliente.buscarClientePorDni(listaClientes, dniBuscado);
-                    if (clientePorDni != null) {
-                    System.out.println("Cliente encontrado por DNI: " + clientePorDni);
-                }   else {
-                    System.out.println("Cliente no encontrado por DNI.");
-                    break;
-                }
                 case 4:
                     System.out.println("LISTA DE CLIENTES EN ORDEN DE REGISTRO");
                     // Mostrar todos los clientes

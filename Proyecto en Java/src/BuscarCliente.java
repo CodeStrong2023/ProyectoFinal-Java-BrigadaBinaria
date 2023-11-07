@@ -46,13 +46,26 @@ public class BuscarCliente {
             }
             return clienteEncontrado1; 
     }
-        //Método para buscar a un cliente por su dni
-    public static Cliente buscarClientePorDni(ArrayList<Cliente> listaClientes, int dni) {
+    //Método para buscar a un cliente por su dni
+    public static Cliente buscarClientePorDni(ArrayList<Cliente> listaClientes, int dniBuscado) {
+        Cliente clienteEncontrado2 = null;
         for (Cliente cliente : listaClientes) {
-            if (cliente.getDni() == dni) {
-                return cliente;
+            if (cliente.getDni() == dniBuscado) {
+                //Imprimimos los datos del cliente con este nombre
+                System.out.println("\nEL CLIENTE FUE REGISTRADO ");
+                System.out.println("DNI: " + cliente.getDni());
+                System.out.println("Nombre: " + cliente.getNombre());
+                System.out.println("Apellido: " + cliente.getApellido());
+                System.out.println("Teléfono: " + cliente.getTelefono());
+                System.out.println(("Email: " + cliente.getEmail()));
+                System.out.println("Total de gastos realizado en la tienda: " + cliente.getTotalCompra());
+                System.out.println("Descuento: " + cliente.getDescuento());
+                clienteEncontrado2 = cliente; 
             }
         }
-        return null;
+            if (clienteEncontrado2 == null) {
+                System.out.println("No se ha encontrado ningún cliente con ese DNI");
+            }
+            return clienteEncontrado2; 
     }
 }
