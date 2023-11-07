@@ -24,15 +24,28 @@ public class BuscarCliente {
             }
             return clienteEncontrado; 
     }
-    //Método para buscar a un cliente por el apellido 
-    public static Cliente buscarPorApellido(ArrayList<Cliente> clientes, String apellido) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getApellido().equalsIgnoreCase(apellido)) {
-                return cliente;
+    //Método para buscar a un cliente por el apellido
+    public static Cliente buscarClientePorApellido(ArrayList<Cliente> listaClientes, String apellidoBuscado) {
+        Cliente clienteEncontrado1 = null;
+        for (Cliente cliente : listaClientes) {
+            if (cliente.getApellido().equalsIgnoreCase(apellidoBuscado)){
+                //Imprimimos los datos del cliente con este nombre
+                System.out.println("\nEL CLIENTE FUE REGISTRADO ");
+                System.out.println("DNI: " + cliente.getDni());
+                System.out.println("Nombre: " + cliente.getNombre());
+                System.out.println("Apellido: " + cliente.getApellido());
+                System.out.println("Teléfono: " + cliente.getTelefono());
+                System.out.println(("Email: " + cliente.getEmail()));
+                System.out.println("Total de gastos realizado en la tienda: " + cliente.getTotalCompra());
+                System.out.println("Descuento: " + cliente.getDescuento());
+                clienteEncontrado1 = cliente; 
             }
         }
-        return null;
-        }
+            if (clienteEncontrado1 == null) {
+                System.out.println("No se ha encontrado ningún cliente con ese apellido");
+            }
+            return clienteEncontrado1; 
+    }
         //Método para buscar a un cliente por su dni
     public static Cliente buscarClientePorDni(ArrayList<Cliente> listaClientes, int dni) {
         for (Cliente cliente : listaClientes) {

@@ -54,14 +54,7 @@ public class Programa {
                     //Llamamos al método buscarClientePorApellido 
                     System.out.println("Ingrese el nombre del cliente a buscar");
                     String apellidoBuscado = scanner.nextLine(); 
-                    Cliente clientePorApellido = BuscarCliente.buscarPorApellido(listaClientes,apellidoBuscado); 
-                    if (clientePorApellido != null) {
-                        System.out.println("Cliente encontrado por nombre: " + clientePorApellido);
-                }   else {
-                        System.out.println("Cliente no encontrado por nombre.");
-                }
-                    break; 
-
+                    Cliente clientePorApellido = BuscarCliente.buscarClientePorApellido(listaClientes,apellidoBuscado); 
                 case 3:  
                     System.out.println("Buscar cliente por DNI");
                     System.out.println("Ingrese el DNI a buscar");
