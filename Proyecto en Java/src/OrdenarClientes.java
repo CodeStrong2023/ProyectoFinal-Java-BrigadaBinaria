@@ -24,4 +24,22 @@ public class OrdenarClientes implements Comparator<Cliente> {
             System.out.println("Descuento: " + cliente.getDescuento());
         }
     }
+
+    //Método para ordenar la lista de clientes según quien realizó más gastos en la tienda
+    public void mostrarClientesOrdenadosGasto(List<Cliente> listaClientes) {
+        System.out.println("LISTA DE CLIENTES ORDENADOS POR TOTAL DE GASTOS RELIZADOS EN LA TIENDA");
+        // Clasificar la lista de clientes según el total de compras (de mayor a menor)
+        listaClientes.sort(Comparator.comparingDouble(Cliente::getTotalCompra).reversed());
+        // Mostrar la lista ordenada
+        for (Cliente cliente : listaClientes) {
+        System.out.println("\nCLIENTE");
+        System.out.println("DNI: " + cliente.getDni());
+        System.out.println("Nombre: " + cliente.getNombre());
+        System.out.println("Apellido: " + cliente.getApellido());
+        System.out.println("Teléfono: " + cliente.getTelefono());
+        System.out.println("Email: " + cliente.getEmail());
+        System.out.println("Total de gastos realizado en la tienda: " + cliente.getTotalCompra());
+        System.out.println("Descuento: " + cliente.getDescuento());
+        }
+    }
 }

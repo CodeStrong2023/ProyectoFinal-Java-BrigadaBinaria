@@ -91,11 +91,12 @@ public class Programa {
             }
                 break;  
             case 5:
-            // Crear una instancia de la clase OrdenarClientes
+            // Creamos una instancia de la clase OrdenarClientes
             OrdenarClientes alfabetoClientes = new OrdenarClientes();
-            // Mostrar la lista de clientes ordenada
+            // Mostrar la lista de clientes ordenada alabéticamente
             alfabetoClientes.ordenarClientesAlfabeto(listaClientes);
-                    break;
+                break;
+            case 6: 
             }
     }
 }
