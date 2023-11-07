@@ -24,6 +24,7 @@ public class OrdenarClientes implements Comparator<Cliente> {
             System.out.println("Email: " + cliente.getEmail());
             System.out.println("Total de gasto realizado en la tienda: " + cliente.getTotalCompra());
             System.out.println("Descuento: " + cliente.getDescuento());
+            System.out.println("\n");
         }
     }
 
@@ -34,7 +35,6 @@ public class OrdenarClientes implements Comparator<Cliente> {
         listaClientes.sort(Comparator.comparingDouble(Cliente::getTotalCompra).reversed());
         // Mostrar la lista ordenada
         for (Cliente cliente : listaClientes) {
-        System.out.println("\nCLIENTE");
         System.out.println("DNI: " + cliente.getDni());
         System.out.println("Nombre: " + cliente.getNombre());
         System.out.println("Apellido: " + cliente.getApellido());
@@ -42,6 +42,7 @@ public class OrdenarClientes implements Comparator<Cliente> {
         System.out.println("Email: " + cliente.getEmail());
         System.out.println("Total de gastos realizado en la tienda: " + cliente.getTotalCompra());
         System.out.println("Descuento: " + cliente.getDescuento());
+        System.out.println("\n");
         }
     }
 }
