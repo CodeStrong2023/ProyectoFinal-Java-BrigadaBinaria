@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 //la clase cliente será la clase base de nuestro Proyecto
 public class Cliente {
     // Atributos 
@@ -14,13 +15,14 @@ public class Cliente {
     public Cliente() {
     }
     // Método constructor con sus parámetros
-    public Cliente(int dni, String nombre, String apellido, String telefono, String email, double totalCompra, double descuento) {
+    public Cliente(int dni, String nombre, String apellido, String telefono, String email, double totalCompra) {
         this.dni = dni; 
         this.nombre = nombre; 
         this.apellido = apellido; 
         this.telefono = telefono; 
         this.email = email;
-        this.totalCompra = totalCompra; 
+        this.totalCompra = totalCompra;
+        //Se le aplica un descuento del 10% si la compra supera los $15.000
         if (totalCompra >= 15000) {
             this.descuento = totalCompra * 0.10;
         } else {
@@ -70,6 +72,7 @@ public class Cliente {
     public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
+
     // Método para obtener un nuevo objeto del tipo Cliente (cargados por teclado)
     public static Cliente ingresarCliente(Scanner scanner, int numeroCliente) {
         System.out.println("Ingrese el DNI del cliente " + numeroCliente + ":");
@@ -91,19 +94,6 @@ public class Cliente {
         double totalCompra = scanner.nextDouble();
 
         scanner.nextLine(); 
-        return new Cliente(dni, nombre, apellido, telefono, email, totalCompra, totalCompra);
-    }
-    //Método para mostrar la información de cada cliente 
-    //Información del objeto y el nombre de la instancia
-    public void mostrarInformacionCliente() {
-    System.out.println("LISTA DE CLIENTES" + "\n");
-    //System.out.println("Nombre de la instancia: " + nombreInstancia);
-    System.out.println("NOMBRE: "+ this.nombre);
-    System.out.println("APELLIDO: " + this.apellido);
-    System.out.println("DNI: " + this.dni);
-    System.out.println("TELÉFONO: " + this.telefono);
-    System.out.println("EMAIL: " + this.email);
-    System.out.println ("TOTAL DE COMPRA: " + this.totalCompra);
-    System.out.println("DESCUENTO: " + this.descuento);
+        return new Cliente(dni,nombre, apellido, telefono, email, totalCompra); 
     }
 }

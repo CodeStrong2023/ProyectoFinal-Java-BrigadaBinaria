@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class ProgramaPrincipal {
+public class Programa {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Cliente> listaClientes = new ArrayList<>();
@@ -18,6 +18,7 @@ public class ProgramaPrincipal {
         System.out.println("¿Cuántos clientes adicionales desea ingresar?");
         int cantidadNuevosClientes = scanner.nextInt();
         scanner.nextLine(); // Consumimos la nueva línea
+
         // Agregar nuevos clientes
         for (int i = 1; i <= cantidadNuevosClientes; i++) {
             Cliente cliente = Cliente.ingresarCliente(scanner, i + cantidadInicialClientes);
@@ -35,7 +36,7 @@ public class ProgramaPrincipal {
         System.out.println("6: Ver lista de clientes según quien realizó más gastos en la tienda");
         System.out.println("7: Salir del programa");
         //Le pedimos al usuario un número según lo que desee hacer 
-        int caso = Integer.parseInt(scanner.nextLine()); 
+        int caso = 0; 
         switch (caso) {
             case 1:
             System.out.println("BUSCAR CLIENTE POR NOMBRE");
