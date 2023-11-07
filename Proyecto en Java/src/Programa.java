@@ -5,7 +5,8 @@ public class Programa {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Cliente> listaClientes = new ArrayList<>();
-   //Clientes ingresados desde el backend; 
+
+        //Clientes ingresados desde el backend; 
         int cantidadInicialClientes = 6; 
         // Clientes ya cargados por nosotros (son 6 clientes del tipo object)
             listaClientes.add(new Cliente(42948039, "Zhou", "Yáng", "2604749366", "yangzhou94@gmail.com", 25000));
@@ -36,24 +37,21 @@ public class Programa {
             System.out.println("5: Ver lista de clientes en orden alfabético");
             System.out.println("6: Ver lista de clientes según quien realizó más gastos en la tienda");
             System.out.println("7: Salir del programa");
-            //Le pedimos al usuario un número según lo que desee hacer  
+            //Le pedimos al usuario un número según lo que desee hacer
+            System.out.println("Ingrese el número de la opción que escoja");
+            caso = scanner.nextInt();
             switch (caso) {
                 case 1:
                 System.out.println("BUSCAR CLIENTE POR NOMBRE");
                     // Llamar al método buscarPorNombre
                     System.out.println("Ingrese el nombre del cliente a buscar");
-                    String nombreBuscado = scanner.nextLine(); 
-                    Cliente clientePorNombre = BuscarCliente.buscarPorNombre(listaClientes,nombreBuscado);
-                    if (clientePorNombre != null) {
-                        System.out.println("Cliente encontrado por nombre: " + clientePorNombre);
-                }   else {
-                        System.out.println("Cliente no encontrado por nombre.");
-                }
-                    break;
-
+                    String nombreBuscado = scanner.nextLine();
+                    //Llamamos al método buscarClientePorNombre de la clase  BuscarCliente
+                    Cliente clientePorNombre = BuscarCliente.buscarClientePorNombre(listaClientes,nombreBuscado);
+                break;
                 case 2: 
                 System.out.println("BUSCAR CLIENTE POR APELLIDO");
-                    // Llamar al método buscarClientePorNombre
+                    //Llamamos al método buscarClientePorApellido 
                     System.out.println("Ingrese el nombre del cliente a buscar");
                     String apellidoBuscado = scanner.nextLine(); 
                     Cliente clientePorApellido = BuscarCliente.buscarPorApellido(listaClientes,apellidoBuscado); 
