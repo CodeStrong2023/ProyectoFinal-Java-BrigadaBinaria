@@ -20,7 +20,7 @@ public class Programa {
         int cantidadNuevosClientes = scanner.nextInt();
         scanner.nextLine(); // Consumimos la nueva línea
 
-        // Agregar nuevos clientes
+        // Agregamos nuevos clientes
         for (int i = 1; i <= cantidadNuevosClientes; i++) {
             Cliente cliente = Cliente.ingresarCliente(scanner, i + cantidadInicialClientes);
             listaClientes.add(cliente);
@@ -43,24 +43,30 @@ public class Programa {
             switch (caso) {
                 case 1:
                 System.out.println("BUSCAR CLIENTE POR NOMBRE");
-                    // Llamar al método buscarPorNombre
                     System.out.println("Ingrese el nombre del cliente a buscar");
-                    String nombreBuscado = scanner.nextLine();
+                    String nombreBuscado = scanner.nextLine(); //el usuario ingresa el nombre a buscar
                     //Llamamos al método buscarClientePorNombre de la clase  BuscarCliente
-                    Cliente clientePorNombre = BuscarCliente.buscarClientePorNombre(listaClientes,nombreBuscado);
+                    Cliente clienteEncontrado = BuscarCliente.buscarClientePorNombre(listaClientes,nombreBuscado);
+                    if (clienteEncontrado != null) {
+                    }
                     break;
                 case 2: 
                 System.out.println("BUSCAR CLIENTE POR APELLIDO");
-                    //Llamamos al método buscarClientePorApellido 
                     System.out.println("Ingrese el nombre del cliente a buscar");
-                    String apellidoBuscado = scanner.nextLine(); 
-                    Cliente clientePorApellido = BuscarCliente.buscarClientePorApellido(listaClientes,apellidoBuscado);
+                    String apellidoBuscado = scanner.nextLine(); //el usuario ingresa el apellido a buscar
+                    //Llamamos al método buscarClientePorApellido de la clase BuscarCliente
+                    Cliente clienteEncontrado1 = BuscarCliente.buscarClientePorApellido(listaClientes,apellidoBuscado);
+                    if (clienteEncontrado1 != null) {
+                    }
                     break; 
                 case 3:  
                     System.out.println("Buscar cliente por DNI");
                     System.out.println("Ingrese el DNI a buscar");
                     int dniBuscado = Integer.parseInt(scanner.nextLine());
-                    Cliente clientePorDni = BuscarCliente.buscarClientePorDni(listaClientes, dniBuscado);
+                    //Llamamos al método buscarClientePorDni de la clase BuscarCliente
+                    Cliente clienteEncontrado2 = BuscarCliente.buscarClientePorDni(listaClientes, dniBuscado);
+                    if (clienteEncontrado2 != null) {
+                    }
                     break;  
                 case 4:
                     System.out.println("LISTA DE CLIENTES EN ORDEN DE REGISTRO");
@@ -80,7 +86,7 @@ public class Programa {
                 case 5:
                     // Creamos una instancia de la clase OrdenarClientes
                     OrdenarClientes alfabetoClientes = new OrdenarClientes();
-                    // Mostrar la lista de clientes ordenada alabéticamente
+                    // Mostramos la lista de clientes ordenada alabéticamente
                     alfabetoClientes.mostrarClientesOrdenadosAlfabeticamente(listaClientes);
                     break;
                 case 6:
