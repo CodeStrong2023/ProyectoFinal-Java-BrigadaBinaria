@@ -48,18 +48,20 @@ public class Programa {
                     String nombreBuscado = scanner.nextLine();
                     //Llamamos al método buscarClientePorNombre de la clase  BuscarCliente
                     Cliente clientePorNombre = BuscarCliente.buscarClientePorNombre(listaClientes,nombreBuscado);
-                break;
+                    break;
                 case 2: 
                 System.out.println("BUSCAR CLIENTE POR APELLIDO");
                     //Llamamos al método buscarClientePorApellido 
                     System.out.println("Ingrese el nombre del cliente a buscar");
                     String apellidoBuscado = scanner.nextLine(); 
-                    Cliente clientePorApellido = BuscarCliente.buscarClientePorApellido(listaClientes,apellidoBuscado); 
+                    Cliente clientePorApellido = BuscarCliente.buscarClientePorApellido(listaClientes,apellidoBuscado);
+                    break; 
                 case 3:  
                     System.out.println("Buscar cliente por DNI");
                     System.out.println("Ingrese el DNI a buscar");
                     int dniBuscado = Integer.parseInt(scanner.nextLine());
                     Cliente clientePorDni = BuscarCliente.buscarClientePorDni(listaClientes, dniBuscado);
+                    break;  
                 case 4:
                     System.out.println("LISTA DE CLIENTES EN ORDEN DE REGISTRO");
                     // Mostrar todos los clientes
@@ -79,7 +81,7 @@ public class Programa {
                     // Creamos una instancia de la clase OrdenarClientes
                     OrdenarClientes alfabetoClientes = new OrdenarClientes();
                     // Mostrar la lista de clientes ordenada alabéticamente
-                    alfabetoClientes.ordenarClientesAlfabeto(listaClientes);
+                    alfabetoClientes.mostrarClientesOrdenadosAlfabeticamente(listaClientes);
                     break;
                 case 6:
                     // Creamos una instancia de la clase OrdenarClientes

@@ -3,13 +3,15 @@ import java.util.Comparator;
 import java.util.List; 
 
 public class OrdenarClientes implements Comparator<Cliente> {
-    @Override
-    //Se ordenan los clientes (objetos) según el valor de nombre alfabéticamente 
+    //implementamos interfaz Comparator para personalizar nuestro ordenamiento
+    @Override 
+    //utilizamos el método compare para ir comparando entre dos objetos del tipo Cliente  
     public int compare(Cliente cliente1, Cliente cliente2) {
         return cliente1.getNombre().compareTo(cliente2.getNombre());
     } 
     //Método para ordenar a los clientes alfabéticamente
-    public void ordenarClientesAlfabeto(List<Cliente> listaClientes){
+    public void mostrarClientesOrdenadosAlfabeticamente(List<Cliente> listaClientes){
+        //utilizamos el método Collections.sort para ordenar la lista de clientes según lo definido en el método compare (alfabéticamente)
         Collections.sort(listaClientes, this);
         System.out.println("LISTA DE CLIENTES EN ORDEN ALFABÉTICO");
         // Mostramos la lista ordenada
@@ -28,7 +30,7 @@ public class OrdenarClientes implements Comparator<Cliente> {
     //Método para ordenar la lista de clientes según quien realizó más gastos en la tienda
     public void mostrarClientesOrdenadosGasto(List<Cliente> listaClientes) {
         System.out.println("LISTA DE CLIENTES ORDENADOS POR TOTAL DE GASTOS RELIZADOS EN LA TIENDA");
-        // Clasificar la lista de clientes según el total de compras (de mayor a menor)
+        //Ordenamos la lista de clientes según el total de compras (de mayor a menor)
         listaClientes.sort(Comparator.comparingDouble(Cliente::getTotalCompra).reversed());
         // Mostrar la lista ordenada
         for (Cliente cliente : listaClientes) {
