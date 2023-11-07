@@ -65,13 +65,13 @@ public class Programa {
                 break; 
 
             case 3:  
-            System.out.println("Buscar cliente por DNI");
-            System.out.println("Ingrese el DNI a buscar");
-            int dniBuscado = Integer.parseInt(scanner.nextLine());
-            Cliente clientePorDni = BuscarCliente.buscarClientePorDni(listaClientes, dniBuscado);
-            if (clientePorDni != null) {
+                System.out.println("Buscar cliente por DNI");
+                System.out.println("Ingrese el DNI a buscar");
+                int dniBuscado = Integer.parseInt(scanner.nextLine());
+                Cliente clientePorDni = BuscarCliente.buscarClientePorDni(listaClientes, dniBuscado);
+                if (clientePorDni != null) {
                 System.out.println("Cliente encontrado por DNI: " + clientePorDni);
-            } else {
+            }   else {
                 System.out.println("Cliente no encontrado por DNI.");
                 break;
             }
@@ -90,13 +90,20 @@ public class Programa {
                     System.out.println("Descuento: " + cliente.getDescuento());
             }
                 break;  
+
             case 5:
-            // Creamos una instancia de la clase OrdenarClientes
-            OrdenarClientes alfabetoClientes = new OrdenarClientes();
-            // Mostrar la lista de clientes ordenada alabéticamente
-            alfabetoClientes.ordenarClientesAlfabeto(listaClientes);
+                // Creamos una instancia de la clase OrdenarClientes
+                OrdenarClientes alfabetoClientes = new OrdenarClientes();
+                // Mostrar la lista de clientes ordenada alabéticamente
+                alfabetoClientes.ordenarClientesAlfabeto(listaClientes);
                 break;
-            case 6: 
+
+            case 6:
+                // Creamos una instancia de la clase OrdenarClientes
+                OrdenarClientes gastoClientes = new OrdenarClientes();
+                // Mostramos la lista de clientes ordenada según quien realizó más gastos
+                gastoClientes.mostrarClientesOrdenadosGasto(listaClientes); //llamamos al método
+                break; 
             }
     }
 }
